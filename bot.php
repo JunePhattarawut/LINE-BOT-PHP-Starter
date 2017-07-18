@@ -29,8 +29,8 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 }else if($arrJson['events'][0]['message']['text'] == "ที่นี่ที่ไหน"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ".$arrJson['events'][0]['source']['location'];
+  $arrPostData['messages'][0]['type'] = "String";
+  $arrPostData['messages'][0]['text'] = ['location'];
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
